@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import GradientSelector from './components/GradientSelector';
 
 const App = () => {
   const [count, setCount] = useState(0);
+  const [currentGradient, setCurrentGradient] = useState(null);
 
   return (
     <div className="App">
+      <GradientSelector onGradientChange={setCurrentGradient} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Vite + React</h1>
@@ -37,6 +40,11 @@ const App = () => {
             Vite Docs
           </a>
         </p>
+        {currentGradient && (
+          <p className="current-gradient-info">
+            Current gradient: {currentGradient.name}
+          </p>
+        )}
       </header>
     </div>
   );
