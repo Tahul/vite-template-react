@@ -15,7 +15,7 @@ const App = () => {
         <h1>Vite + React</h1>
         <p>
           <button onClick={() => setCount(count => count + 1)}>
-            count is {count}
+            gigacount is {count}
           </button>
         </p>
         <p>
